@@ -1,0 +1,47 @@
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+
+Joystick rightStick;
+Joystick leftStick;
+
+if (shooterButton.get()){
+shooterMotor.set(0.95);
+}
+
+if (transferButton.get()){
+transferMotor.set(0.4);
+}
+if (intakeButton.get()){
+intakeMotor.set(0.8);
+}
+
+rightDriveMotor.set(rightStick.getY());
+leftDriveMotor.set(leftStick.getY());
+
+WPI_TalonSRX shooterMotor;
+WPI_TalonSRX transferMotor;
+
+
+rightStick = new Joystick(1);
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+leftStick = new Joystick(2);
+
+shooterButton = new JoystickButton(rightStick, 1);
+transferButton = new JoystickButton(rightStick, 2);
+intakeButton = new JoystickButton(rightStick, 3);
+
+shooterMotor = new WPI_TalonSRX(0);
+transferMotor = new WPI_TalonSRX(1);
+intakeMotor = new WPI_TalonSRX(2);
+
+WPI_TalonSRX intakeMotor;
+WPI_TalonSRX rightDriveMotor;
+WPI_TalonSRX leftDriveMotor;
+rightDriveMotor = new WPI_TalonSRX(3);
+leftDriveMotor = new WPI_TalonSRX(4);
+
+JoystickButton shooterButton;
+JoystickButton transferButton;
+JoystickButton intakeButton;
+
